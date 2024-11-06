@@ -1,0 +1,76 @@
+{
+  "name": "@fiftyfivetech/strapi-plugin-preview-button",
+  "version": "1.0.0",
+  "description": "Strapi Preview Data Before Publish It",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Ganesh Agrawal <ganesh.agrawal@fiftyfivetech.io>",
+  "type": "commonjs",
+  "strapi": {
+    "kind": "plugin",
+    "name": "preview-button",
+    "displayName": "Preview Button",
+    "description": "Preview Data Before Publish It"
+  },
+  "scripts": {
+    "build": "strapi-plugin build",
+    "test:ts:back": "run -T tsc -p server/tsconfig.json",
+    "test:ts:front": "run -T tsc -p admin/tsconfig.json",
+    "verify": "strapi-plugin verify",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "release": "npm run build && commit-and-tag-version && git push --follow-tags && npm publish"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-admin": {
+      "types": "./dist/admin/src/index.d.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@strapi/design-system": "^2.0.0-rc.12",
+    "@strapi/icons": "^2.0.0-rc.12",
+    "qs": "^6.13.0",
+    "react-intl": "^6.7.0"
+  },
+  "devDependencies": {
+    "commit-and-tag-version": "12.5.0",
+    "@strapi/sdk-plugin": "^5.2.6",
+    "@strapi/strapi": "^5.2.0",
+    "@strapi/typescript-utils": "^5.2.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "styled-components": "^6.1.13",
+    "typescript": "^5.6.2"
+  },
+  "peerDependencies": {
+    "@strapi/sdk-plugin": "^5.2.7",
+    "@strapi/strapi": "^5.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "styled-components": "^6.1.13"
+  },
+  "volta": {
+    "node": "18.20.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FiftyfiveTech/strapi-plugin-preview-button.git"
+  }
+}
