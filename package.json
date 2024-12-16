@@ -1,6 +1,6 @@
 {
   "name": "@fiftyfivetech/strapi-plugin-preview-button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Strapi Preview Data Before Publish It",
   "keywords": [],
   "license": "MIT",
