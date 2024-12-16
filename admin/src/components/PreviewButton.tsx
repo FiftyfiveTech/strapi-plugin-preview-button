@@ -59,7 +59,7 @@ const handleClick = ({
     isDraft
   };
 
-  const fullUrl = `${baseUrl}?${qs.stringify(params,{ encode: false })}`;
+  const fullUrl = `${baseUrl}?${qs.stringify(params,{ encode: true })}`;
   window.open(fullUrl, '_blank');
 };
 
